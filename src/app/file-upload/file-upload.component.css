@@ -1,0 +1,24 @@
+::ng-deep .body-content{
+    display: flex;
+    justify-content: center;
+    align-items: center !important;
+    padding-top: 20%;
+    
+}
+
+h1{
+    color: black;
+}
+
+.submit-button{
+    display: flex;
+    justify-content: center;
+}
+
+.input#file-upload-button{
+    color: black;
+}
+
+.upload-button{
+    cursor: pointer;
+}

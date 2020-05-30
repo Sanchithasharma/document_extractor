@@ -1,0 +1,89 @@
+<div *ngIf = showMyData>
+    <button (click) = "getMyFormDetails()">
+        Load My data
+    </button>
+</div>
+
+
+<div *ngIf = !showMyData>
+    <h1 class="display-4">
+        REGISTRATION FORM
+    </h1>
+    
+    <div  class="form-body">
+    
+        <form #registerForm="ngForm" (submit)="onSubmit(registerForm)">
+    
+            <div class="form-group">
+                <label>
+                    Name : 
+               </label>
+                   <input name="firstName"  [(ngModel)]="formUser.name" #ctrlTitle="ngModel" required> <br>
+             
+            </div>
+            <!-- <label *ngIf="ctrlTitle.invalid && (ctrlTitle.touched || ctrlTitle.dirty) " style="color: red;"> field is mandatory</label><br>
+         -->
+            <label>
+                 FATHER’S NAME :
+            </label>
+                <input name="fatherName"  [(ngModel)]="formUser.fatherName">
+            <br>
+        
+            <label>
+                 MOTHER’S  NAME :
+            </label>
+            <input name="motherName"  [(ngModel)]="formUser.motherName">
+            <br>
+        
+            <label>
+                DOB :  
+            </label>
+            <input name="address"  [(ngModel)]="formUser.dob"><br>
+            
+        
+            <label>
+                GENDER :
+            </label>
+            <input name="gender"  [(ngModel)]="formUser.gender"><br>
+        
+            <label>
+                CATEGORY :
+            </label>
+            <input name="category"  [(ngModel)]="formUser.category"><br>
+            
+            <label>
+                10th CGPA:
+            </label>
+            <input name="collegeName"  [(ngModel)]="formUser.cgpa"><br>
+    
+            <label>
+                E-MAIL :
+            </label>
+            <input name="email"  [(ngModel)]="formUser.email"><br>
+        
+            <label>
+                PHONE-NO :
+            </label>
+            <input name="age"  [(ngModel)]="formUser.phno"><br>
+        
+            <label>
+                NATIONALITY : 
+            </label>
+            <input name="nationality"  [(ngModel)]="formUser.nationality"><br>
+    
+            <label>
+                ADDRESS :
+            </label>
+            <input name="address"  [(ngModel)]="formUser.address"><br>
+    
+            <div style="padding-left: 30%;">
+                <button type="button" class="btn btn-info" (click)  = onSubmit($event) [disabled]="!registerForm.valid">Submit</button>
+            </div>
+            
+            
+        
+          </form>
+        </div>
+
+</div>
+

@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1 class="display-2" style="text-align: center">Auto-filling exam forms</h1>
+
+
+  <div class="body-content">
+    <form>      
+      <div>
+        <input class="upload-button" type="file" class="form-control-file border"  name="image" (change)="selectImage($event)" accept=".doc,.docx" />
+      </div>
+      <br>
+      <div class="submit-button">
+        <button type="button" type="button" class="btn btn-outline-success btn-lg" [routerLink]="'/myForm'" (click)="onSubmit()">Upload</button>
+      </div>
+    </form>
+  </div>
+
+</div>
