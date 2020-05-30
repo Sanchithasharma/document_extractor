@@ -1,9 +1,9 @@
-<div *ngIf = showMyData class="reload-my-form">
+<div *ngIf=showMyData class="reload-my-form">
     <div>
-        <h1 style="text-align: center; color: azure;" class="display-4">  File uploaded successfully</h1> <br>
+        <h1 style="text-align: center; color: azure;" class="display-4"> File uploaded successfully</h1> <br>
     </div>
     <div>
-        <button class="btn btn-light btn-lg" (click) = "getMyFormDetails()">
+        <button class="btn btn-light btn-lg" (click)="getMyFormDetails()">
             Load My form
         </button>
     </div>
@@ -11,87 +11,113 @@
 </div>
 
 
-<div *ngIf = !showMyData>
+<div *ngIf=!showMyData>
     <h1 class="display-4" style="color: azure; background-color: yellowgreen; text-align: center;">
         REGISTRATION FORM
     </h1>
-    
-    <div  class="form-body">
-    
+
+    <div class="form-body">
+
         <form #registerForm="ngForm" (submit)="onSubmit(registerForm)">
-    
+
             <div class="form-group">
                 <label>
-                    Name : 
-               </label>
-                   <input name="firstName"  [(ngModel)]="formUser.name" #ctrlTitle="ngModel" required> <br>
-             
+                    Name :
+                </label>
+                <input name="firstName" [(ngModel)]="formUser.name" #ctrlTitle="ngModel" required> <br>
+
             </div>
             <!-- <label *ngIf="ctrlTitle.invalid && (ctrlTitle.touched || ctrlTitle.dirty) " style="color: red;"> field is mandatory</label><br>
          -->
-            <label>
-                 FATHER’S NAME :
-            </label>
-                <input name="fatherName"  [(ngModel)]="formUser.fatherName">
-            <br>
-        
-            <label>
-                 MOTHER’S  NAME :
-            </label>
-            <input name="motherName"  [(ngModel)]="formUser.motherName">
-            <br>
-        
-            <label>
-                DOB :  
-            </label>
-            <input name="address"  [(ngModel)]="formUser.dob"><br>
-            
-        
-            <label>
-                GENDER :
-            </label>
-            <input name="gender"  [(ngModel)]="formUser.gender"><br>
-        
-            <label>
-                CATEGORY :
-            </label>
-            <input name="category"  [(ngModel)]="formUser.category"><br>
-            
-            <label>
-                10th CGPA:
-            </label>
-            <input name="collegeName"  [(ngModel)]="formUser.cgpa"><br>
-    
-            <label>
-                E-MAIL :
-            </label>
-            <input name="email"  [(ngModel)]="formUser.email"><br>
-        
-            <label>
-                PHONE-NO :
-            </label>
-            <input name="age"  [(ngModel)]="formUser.phno"><br>
-        
-            <label>
-                NATIONALITY : 
-            </label>
-            <input name="nationality"  [(ngModel)]="formUser.nationality"><br>
-    
-            <label>
-                ADDRESS :
-            </label>
-            <input name="address"  [(ngModel)]="formUser.address"><br>
-    
-            <div style="padding-left: 30%;">
-                <button type="button" class="btn btn-success btn-lg"  (click) = onSubmit($event) [disabled]="!registerForm.valid">Submit</button>
+            <div *ngIf=fatherNameFlag>
+                <label>
+                    FATHER’S NAME :
+                </label>
+                <input name="fatherName" [(ngModel)]="formUser.fatherName">
             </div>
-            
-        
-        
-          </form>
-        </div>
 
-        
+            <br>
+
+            <div *ngIf=motherNameFlag>
+                <label>
+                    MOTHER’S NAME :
+                </label>
+                <input name="motherName" [(ngModel)]="formUser.motherName">
+            </div>
+            <br>
+
+
+            <div>
+                <label>
+                    DOB :
+                </label>
+                <input name="address" [(ngModel)]="formUser.dob">
+            </div>
+            <br>
+
+
+            <div *ngIf=genderFlag>
+                <label>
+                    GENDER :
+                </label>
+                <input name="gender" [(ngModel)]="formUser.gender"><br>
+            </div>
+            <br>
+            <div>
+                <label>
+                    CATEGORY :
+                </label>
+                <input name="category" [(ngModel)]="formUser.category">
+            </div><br>
+
+            <div>
+                <label>
+                    10th CGPA:
+                </label>
+                <input name="collegeName" [(ngModel)]="formUser.cgpa"><br>
+
+            </div><br>
+
+            <div>
+                <label>
+                    E-MAIL :
+                </label>
+                <input name="email" [(ngModel)]="formUser.email"><br>
+
+            </div><br>
+  
+            <div>
+                <label>
+                    PHONE-NO :
+                </label>
+                <input name="age" [(ngModel)]="formUser.phno"><br>
+
+            </div>
+
+            <div *ngIf=nationalityFlag>
+                <label>
+                    NATIONALITY :
+                </label>
+                <input name="nationality" [(ngModel)]="formUser.nationality"><br>
+            </div>
+
+            <div *ngIf=addFlag>
+                <label>
+                    ADDRESS :
+                </label>
+                <input name="address" [(ngModel)]="formUser.address"><br>
+            </div>
+
+            <div style="padding-left: 30%;">
+                <button type="button" class="btn btn-success btn-lg" (click)=onSubmit($event)
+                    [disabled]="!registerForm.valid">Submit</button>
+            </div>
+
+
+
+        </form>
+    </div>
+
+
 
 </div>
-

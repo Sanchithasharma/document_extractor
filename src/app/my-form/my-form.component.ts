@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ObjForFormService } from '../obj-for-form.service';
 import { Student } from '../student';
-import { Session } from 'protractor';
+
+
 
 @Component({
   selector: 'app-my-form',
@@ -9,13 +10,19 @@ import { Session } from 'protractor';
   styleUrls: ['./my-form.component.css']
 })
 export class MyFormComponent implements OnInit {
+  categoryFlag: boolean = true;
+  formObject;
+  showMyData : boolean = true;
+  addFlag: boolean = true;
+  nationalityFlag: boolean = true;
+  genderFlag: boolean  = true;
+  motherNameFlag: boolean  = true;
+  fatherNameFlag: boolean  = true;
 
   constructor(public prmyFormObj: ObjForFormService) {
 
    }
 
-  formObject;
-  showMyData : boolean = true;
 
 
 
@@ -56,6 +63,8 @@ export class MyFormComponent implements OnInit {
     this.formUser.phno = this.formObject.phno;
     this.formUser.nationality = this.formObject.nationality;
     this.formUser.address = this.formObject.address;
+
+    this.objectValueValidation(this.formUser);
   }
 
   onSubmit(form) {
@@ -70,6 +79,40 @@ export class MyFormComponent implements OnInit {
     }
     console.log(localStorage.getItem("session"));
 
+  }
+
+  
+  objectValueValidation(obj){
+    
+    if(this.formUser.address.trim() === ""){
+      this.addFlag = false;
+    }
+
+    else if(this.formUser.category.trim() === ""){
+      this.categoryFlag = false;
+    }
+
+    // else if(this.formUser.dob.trim() === ""){
+    //   this.nameFlag = false;
+    // }
+
+    else if(this.formUser.fatherName.trim() === ""){
+      this.fatherNameFlag = false;
+    }
+
+    else if(this.formUser.gender.trim() === ""){
+      this.genderFlag = false;
+    }
+
+    else if(this.formUser.motherName.trim()=== ""){
+      this.motherNameFlag = false;
+    }
+
+    else if(this.formUser.nationality.trim()=== ""){
+      this.nationalityFlag = false;
+    }
+    
+    
   }
 
 }
