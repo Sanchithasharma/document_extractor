@@ -1,12 +1,18 @@
-<div *ngIf = showMyData>
-    <button (click) = "getMyFormDetails()">
-        Load My data
-    </button>
+<div *ngIf = showMyData class="reload-my-form">
+    <div>
+        <h1 style="text-align: center; color: azure;" class="display-4">  File uploaded successfully</h1> <br>
+    </div>
+    <div>
+        <button class="btn btn-light btn-lg" (click) = "getMyFormDetails()">
+            Load My form
+        </button>
+    </div>
+
 </div>
 
 
 <div *ngIf = !showMyData>
-    <h1 class="display-4">
+    <h1 class="display-4" style="color: azure; background-color: yellowgreen; text-align: center;">
         REGISTRATION FORM
     </h1>
     
@@ -77,13 +83,15 @@
             <input name="address"  [(ngModel)]="formUser.address"><br>
     
             <div style="padding-left: 30%;">
-                <button type="button" class="btn btn-info" (click)  = onSubmit($event) [disabled]="!registerForm.valid">Submit</button>
+                <button type="button" class="btn btn-success btn-lg"  (click) = onSubmit($event) [disabled]="!registerForm.valid">Submit</button>
             </div>
             
-            
+        
         
           </form>
         </div>
+
+        
 
 </div>
 

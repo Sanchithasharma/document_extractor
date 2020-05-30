@@ -5,7 +5,7 @@ import { MyFormComponent } from './my-form/my-form.component';
 
 
 const routes: Routes = [
-  { path: 'fileupload', component: FileUploadComponent },
+  { path: '', component: FileUploadComponent },
   { path: 'myForm', component: MyFormComponent },
   { path: '',   redirectTo: 'fileupload', pathMatch: 'full' },
 ];

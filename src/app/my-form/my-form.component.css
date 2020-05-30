@@ -14,9 +14,14 @@ input.ng-valid{
 
 label{
     display: inline-block;
-    color: black;
+    color: whitesmoke;
     font-weight: bold;
+    background-color: darkgreen;
 
+}
+
+h1{
+    color: white;
 }
 
 ::ng-deep h2{
@@ -35,7 +40,7 @@ input{
     height: 50px;
     display: flex;
     justify-content: center;
-    border: 1px solid pink;
+    border: 1px solid black;
     border-radius: 5px;
 }
 
@@ -57,7 +62,7 @@ input{
     clear: both;
 } */
 
-button{
+.btn-info{
     background-color: purple;
     border: none; 
     color: white;
@@ -71,3 +76,60 @@ button{
     justify-content: center;
 }
 
+::ng-deep .reload-my-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10%;
+    flex-direction: column;
+}
+
+::ng-deep .load-my-form{
+    background-color: white;
+    border: none; 
+    color: darkgreen;
+    border-radius: 3px;
+    cursor: pointer;
+    height: 40%;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}

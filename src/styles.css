@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+
+body{
+    background-image: url('./assets/bac.png');
+    /* background-repeat: no-repeat; */
+    background-size: 100%;
+
+}
+
+body img{
+    opacity: 0.2;
+}

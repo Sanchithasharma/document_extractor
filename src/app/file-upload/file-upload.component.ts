@@ -17,6 +17,7 @@ export class FileUploadComponent implements OnInit {
   title = 'fileUpload';
   images;
   public a: any;
+  enableUploadButton : boolean = false;
   
 
   constructor(private http: HttpClient, public fileObj: ObjForFormService){}
@@ -31,6 +32,7 @@ export class FileUploadComponent implements OnInit {
       const file = event.target.files[0];
       this.images = file;
     }
+    this.enableUploadButton = true;
   }
 
   onSubmit(){
@@ -51,10 +53,8 @@ export class FileUploadComponent implements OnInit {
   }
 
   processResult(myRes){
-    debugger;
     this.a = myRes;
     console.log(this.a);
     this.fileObj.myFormObj = this.a;
-    this.fileObj.myStr = "Hey";
   }
 }

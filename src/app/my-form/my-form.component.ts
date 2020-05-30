@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ObjForFormService } from '../obj-for-form.service';
 import { Student } from '../student';
+import { Session } from 'protractor';
 
 @Component({
   selector: 'app-my-form',
@@ -41,8 +42,9 @@ export class MyFormComponent implements OnInit {
   getMyFormDetails(){
     this.showMyData = false;
     debugger;
-    this.formObject = this.prmyFormObj.myFormObj;
+    this.formObject = this.prmyFormObj.myFormObj; // gettung the data from servce
     console.log(this.prmyFormObj.myFormObj);
+
     this.formUser.name = this.formObject.name;
     this.formUser.fatherName = this.formObject.fatherName;
     this.formUser.motherName = this.formObject.motherName;
@@ -58,8 +60,15 @@ export class MyFormComponent implements OnInit {
 
   onSubmit(form) {
     console.log('form values ', form);
-    this.getMyFormDetails();
+    // this.getMyFormDetails();
 
+    if (typeof(Storage) !== "undefined") {
+      localStorage.setItem('session', (JSON.stringify(this.formObject)));
+      
+    } else {
+      console.log("Sorry, your browser does not support Web Storage...");
+    }
+    console.log(localStorage.getItem("session"));
 
   }
 

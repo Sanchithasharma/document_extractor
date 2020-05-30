@@ -1,16 +1,20 @@
 <div class="container">
 
-  <h1 class="display-2" style="text-align: center">Auto-filling exam forms</h1>
-
+  <h1 class="display-1">Auto-filling exam forms</h1>
+  <h5 style="text-align: center; color: white; margin-top: 5%;">
+    This application takes a document file as an input and auto-fills the form .<br>
+    This application takes the doc in a specific format as an input and the details are auto-filled.
+    <br>Please upload the document file 
+  </h5>
 
   <div class="body-content">
-    <form>      
-      <div>
+    <form>   
+      <div style="background-color: white;">
         <input class="upload-button" type="file" class="form-control-file border"  name="image" (change)="selectImage($event)" accept=".doc,.docx" />
       </div>
       <br>
       <div class="submit-button">
-        <button type="button" type="button" class="btn btn-outline-success btn-lg" [routerLink]="'/myForm'" (click)="onSubmit()">Upload</button>
+        <button type="button" [disabled]= "!enableUploadButton" type="button" class="btn btn-light btn-lg" [routerLink]="'/myForm'" (click)="onSubmit()">Upload</button>
       </div>
     </form>
   </div>
