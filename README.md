@@ -1,6 +1,7 @@
 # DocExtractor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4. Bootstrap is used for the CSS framework.
+The web apllication takes in the word document and bind it to the google form. 
 
 ## Development server
 
